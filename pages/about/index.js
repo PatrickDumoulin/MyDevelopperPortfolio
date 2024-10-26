@@ -13,7 +13,8 @@ import {
   FaBootstrap,
   FaVuejs,
   FaMusic,
-  FaUnity
+  FaUnity,
+  FaSass 
 } from "react-icons/fa";
 
 import {
@@ -33,13 +34,17 @@ import {
   SiBlender,
   SiXamarin,
   SiAzuredevops,
-  SiYaml
+  SiYaml,
+  SiHtml5,
+  SiCss3
 
 } from "react-icons/si";
 
 import{
   TbSql,
 } from "react-icons/tb";
+
+import { MdHtml } from "react-icons/md";
 
 //  data
 const aboutData = [
@@ -78,19 +83,25 @@ const aboutData = [
         ],
       },
       {
-        title: "JavaScript / TypeScript",
+        title: "JavaScript | TypeScript",
         icons: [
           <SiJavascript />, <SiTypescript />
         ],
       },
       {
-        title: "Git / Github",
+        title: "HTML | CSS | SASS",
+        icons: [
+          <SiHtml5 />, <SiCss3 />, <FaSass/>
+        ],
+      },
+      {
+        title: "Git | Github",
         icons: [
           <FaGithub />,
         ],
       },
       {
-        title: "Jira",
+        title: "Agile | Jira",
         icons: [
           <SiJira />,
         ],

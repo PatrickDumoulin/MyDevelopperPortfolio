@@ -48,4 +48,8 @@
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
+
+  .input {
+    z-index: 10; /* ou un autre z-index plus élevé */
+  }
 }

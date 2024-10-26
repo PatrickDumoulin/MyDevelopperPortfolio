@@ -60,7 +60,7 @@ const Work = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 xl:mt-8"
+              className="h2 xl:mt-12"
             >
               My Work <span className="text-accent">.</span>
             </motion.h2>
@@ -71,7 +71,9 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              text
+              A collection of my recent projects, 
+              featuring work with ASP.NET, 
+              Unity, Angular and React. More to come.
             </motion.p>
           </div>
 

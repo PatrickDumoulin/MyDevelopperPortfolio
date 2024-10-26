@@ -4,19 +4,23 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
-          path: "/thumb1.jpg",
+          title: "ACEF de Québec",
+          technology: "| Asp.Net",
+          path: "/Thumbnail ACEF.png",
         },
         {
-          title: "title",
-          path: "/thumb2.jpg",
+          title: "Space Game",
+          technology: "| Unity",
+          path: "/Thumbnail SPACEGAME.png",
         },
         {
-          title: "title",
-          path: "/thumb3.jpg",
+          title: "Bulky Book",
+          technology: "| Asp.Net",
+          path: "/Thumbnail BULKY.png",
         },
         {
-          title: "title",
+          title: "Dating App",
+          technology: "| Angular",
           path: "/thumb4.jpg",
         },
       ],
@@ -24,52 +28,45 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
-          path: "/thumb4.jpg",
+          title: "Modern Recruit",
+          technology: "| Asp.Net",
+          path: "/Thumbnail MODERNRECRUIT.png",
         },
         {
-          title: "title",
-          path: "/thumb1.jpg",
+          title: "ASC",
+          technology: "| Ml.Net + React",
+          path: "/Thumbnail AnimalSpeciesClassifer.png",
         },
         {
-          title: "title",
-          path: "/thumb2.jpg",
+          title: "IN DEVELOPMENT",
+          path: "/IN DEVELOPMENT.png",
         },
         {
-          title: "title",
-          path: "/thumb3.jpg",
+          title: "IN DEVELOPMENT",
+          path: "/IN DEVELOPMENT.png",
         },
       ],
     },
   ],
 };
 
-//import swiper react components
+// import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-//import swiper styles
+// import swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 // icons
-import {
-  RxCrop,
-  RxPencil2,
-  RxDesktop,
-  RxReader,
-  RxRocket,
-  RxArrowTopRight,
-} from "react-icons/rx";
-
-//import required modules
-import { Pagination } from "swiper";
-
-//icons
 import { BsArrowRight } from "react-icons/bs";
 
+// import required modules
+import { Pagination } from "swiper";
+
 // next image
-import Image from 'next/image';
+import Image from "next/image";
 
 const WorkSlider = () => {
   return (
@@ -87,17 +84,163 @@ const WorkSlider = () => {
             <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
               {slide.images.map((image, index) => {
                 return (
-                <div className='relative rounded-lg overflow-hidden flex 
-                items-center justify-center group'>
-                  <div className='flex items-center justify-center relative overflow-hidden'>
-                    {/* image */}
-                    <Image src={image.path} width={500} height={300} alt=''/>
-                    {/* overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-l
-                     from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 
-                     group-hover:opacity-80 transition-all duration-700"></div>
+                  <div key={index}>
+                    {/* Vérifie si le projet est "ACEF DE QUÉBEC", "Space Game", "Bulky Book", ou "Veille Techno TP2" pour ajouter le lien approprié */}
+                    {image.title === "ACEF de Québec" ? (
+                      <Link
+                        href="/work/acef"
+                        className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                      >
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ) : image.title === "Space Game" ? (
+                      <Link
+                        href="/work/spacegame"
+                        className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                      >
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ) : image.title === "Bulky Book" ? (
+                      <Link
+                        href="/work/bulky"
+                        className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                      >
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ) : image.title === "Modern Recruit" ? (
+                      <Link
+                        href="/work/modernrecruit"
+                        className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                      >
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ) : image.title === "ASC" ? (
+                    <Link
+                      href="/work/animalspeciesclassifier"
+                      className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                    >
+                      <div className="flex items-center justify-center relative overflow-hidden group">
+                        <Image
+                          src={image.path}
+                          width={500}
+                          height={300}
+                          alt={image.title}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                        <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                          <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                            <div className="delay-100">{image.title}</div>
+                            <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                              {image.technology}
+                            </div>
+                            <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                              <BsArrowRight />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                      <div className="relative rounded-lg overflow-hidden flex items-center justify-center group">
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
                 );
               })}
             </div>
