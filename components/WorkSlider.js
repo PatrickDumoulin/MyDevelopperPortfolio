@@ -87,7 +87,7 @@ const WorkSlider = () => {
   }, [router.events]);
 
   return (
-    <div className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+    <div className={`transition-opacity duration-200 ${isVisible ? "opacity-100" : "opacity-0"}`}>
       <Swiper
         spaceBetween={10}
         pagination={{
