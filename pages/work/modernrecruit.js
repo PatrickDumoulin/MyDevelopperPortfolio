@@ -7,6 +7,7 @@ import { fadeIn } from '../../variants';
 
 // composants
 import Circles from '../../components/Circles';
+import Link from 'next/link';
 
 const ModernRecruit = () => {
   return (
@@ -32,18 +33,16 @@ const ModernRecruit = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-             ModernRecruit is an ASP.NET-based job recruitment platform that enables users to 
-             browse job listings, mark favorites, and apply for positions seamlessly. 
-             Built with a microservices architecture (API's), the app provides scalable and modular 
-             components to manage different features, such as job postings, user profiles, and 
-             application tracking. 
+              ModernRecruit is an ASP.NET-based job recruitment platform that enables users to 
+              browse job listings, mark favorites, and apply for positions seamlessly. 
+              Built with a microservices architecture (APIs), the app provides scalable and modular 
+              components to manage different features, such as job postings, user profiles, and 
+              application tracking. 
               <br />
               <br />
-             The architecture ensures that each service (like job listings, 
-             user authentication, and favorite management) operates independently, allowing for 
-             better maintainability and flexibility.
-              
-        
+              The architecture ensures that each service (like job listings, 
+              user authentication, and favorite management) operates independently, allowing for 
+              better maintainability and flexibility.
             </motion.p>
           </div>
 
@@ -84,12 +83,12 @@ const ModernRecruit = () => {
           >
             View GitHub Repository
           </a>
-          <a
+          <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Retour
-          </a>
+            Back
+          </Link>
         </motion.div>
       </div>
     </div>

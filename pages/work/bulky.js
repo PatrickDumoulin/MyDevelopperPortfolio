@@ -7,6 +7,7 @@ import { fadeIn } from '../../variants';
 
 // composants
 import Circles from '../../components/Circles';
+import Link from 'next/link';
 
 const BulkyBookProject = () => {
   return (
@@ -70,11 +71,12 @@ const BulkyBookProject = () => {
 
         {/* Boutons GitHub et Retour */}
         <motion.div 
-        variants={fadeIn("up", 0.5)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="mt-14 text-center flex justify-center gap-4">
+          variants={fadeIn("up", 0.5)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="mt-14 text-center flex justify-center gap-4"
+        >
           <a
             href="https://github.com/PatrickDumoulin/Bulky"
             target="_blank"
@@ -83,12 +85,12 @@ const BulkyBookProject = () => {
           >
             View GitHub Repository
           </a>
-          <a
+          <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Retour
-          </a>
+            Back
+          </Link>
         </motion.div>
       </div>
     </div>

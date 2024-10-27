@@ -7,6 +7,7 @@ import { fadeIn } from '../../variants';
 
 // composants
 import Circles from '../../components/Circles';
+import Link from 'next/link';
 
 const SpaceGameProject = () => {
   return (
@@ -78,12 +79,12 @@ const SpaceGameProject = () => {
           >
             View GitHub Repository
           </a>
-          <a
+          <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Retour
-          </a>
+            Back
+          </Link>
         </motion.div>
       </div>
     </div>

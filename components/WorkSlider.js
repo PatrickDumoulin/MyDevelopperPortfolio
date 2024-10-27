@@ -19,23 +19,24 @@ const workSlides = {
           path: "/Thumbnail BULKY.png",
         },
         {
-          title: "Dating App",
-          technology: "| Angular",
-          path: "/thumb4.jpg",
+          title: "Modern Recruit",
+          technology: "| Asp.Net",
+          path: "/Thumbnail MODERNRECRUIT.png",
         },
       ],
     },
     {
       images: [
-        {
-          title: "Modern Recruit",
-          technology: "| Asp.Net",
-          path: "/Thumbnail MODERNRECRUIT.png",
-        },
+        
         {
           title: "ASC",
           technology: "| Ml.Net + React",
           path: "/Thumbnail AnimalSpeciesClassifer.png",
+        },
+        {
+          title: "My Portfolio",
+          technology: "| React + Next.js",
+          path: "/Thumbnail mydeveloperportfolio.png",
         },
         {
           title: "IN DEVELOPMENT",
@@ -85,7 +86,7 @@ const WorkSlider = () => {
               {slide.images.map((image, index) => {
                 return (
                   <div key={index}>
-                    {/* Vérifie si le projet est "ACEF DE QUÉBEC", "Space Game", "Bulky Book", ou "Veille Techno TP2" pour ajouter le lien approprié */}
+                    {/* Vérifie si le projet est "ACEF DE QUÉBEC", "Space Game", "Bulky Book", "Modern Recruit", "ASC", ou "My Developer Portfolio" pour ajouter le lien approprié */}
                     {image.title === "ACEF de Québec" ? (
                       <Link
                         href="/work/acef"
@@ -191,32 +192,58 @@ const WorkSlider = () => {
                         </div>
                       </Link>
                     ) : image.title === "ASC" ? (
-                    <Link
-                      href="/work/animalspeciesclassifier"
-                      className="relative rounded-lg overflow-hidden flex items-center justify-center group"
-                    >
-                      <div className="flex items-center justify-center relative overflow-hidden group">
-                        <Image
-                          src={image.path}
-                          width={500}
-                          height={300}
-                          alt={image.title}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
-                        <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                          <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
-                            <div className="delay-100">{image.title}</div>
-                            <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                              {image.technology}
-                            </div>
-                            <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
-                              <BsArrowRight />
+                      <Link
+                        href="/work/animalspeciesclassifier"
+                        className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                      >
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  ) : (
+                      </Link>
+                    ) : image.title === "My Portfolio" ? (
+                      <Link
+                        href="/work/mydeveloperportfolio"
+                        className="relative rounded-lg overflow-hidden flex items-center justify-center group"
+                      >
+                        <div className="flex items-center justify-center relative overflow-hidden group">
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={image.title}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                          <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="delay-100">{image.title}</div>
+                              <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                {image.technology}
+                              </div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                                <BsArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ) : (
                       <div className="relative rounded-lg overflow-hidden flex items-center justify-center group">
                         <div className="flex items-center justify-center relative overflow-hidden group">
                           <Image

@@ -7,6 +7,7 @@ import { fadeIn } from '../../variants';
 
 // composants
 import Circles from '../../components/Circles';
+import Link from 'next/link';
 
 const AcefProject = () => {
   return (
@@ -41,7 +42,17 @@ const AcefProject = () => {
               <br />
               <br />
 
-This solution offers a user-friendly interface for managing client records, generating reports, and improving operational efficiency, helping ACEF better support individuals and families with financial challenges.
+This solution offers a user-friendly interface for managing client records, generating reports, 
+and improving operational efficiency, helping ACEF better support individuals and families with 
+financial challenges.
+
+
+        <div className='mt-4'>
+        <a href="/DAS-4ProjectAcefEglish.docx" download className="btn btn-primary text-2xl">
+              <span className="text-accent">&rarr;</span> More Info <span className="text-accent"> &larr; </span>
+            </a>
+        </div>
+          
             </motion.p>
           </div>
 
@@ -81,12 +92,12 @@ This solution offers a user-friendly interface for managing client records, gene
           >
             View GitHub Repository
           </a>
-          <a
+          <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Retour
-          </a>
+            Back
+          </Link>
         </motion.div>
       </div>
     </div>

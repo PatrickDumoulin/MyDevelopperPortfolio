@@ -9,7 +9,7 @@ import { fadeIn } from '../../variants';
 import Circles from '../../components/Circles';
 import Link from 'next/link';
 
-const VeilleTechno = () => {
+const MyDeveloperPortfolio = () => {
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
@@ -24,7 +24,7 @@ const VeilleTechno = () => {
               exit="hidden"
               className="h2 xl:mt-12"
             >
-            Animal Species Classifier<span className="text-accent">.</span>
+              My Developer Portfolio<span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -33,16 +33,16 @@ const VeilleTechno = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              This project utilizes ML.NET and ASP.NET for the backend and React for the 
-              frontend to create an image recognition app that classifies animal species. 
-              Users can upload images, and the machine learning model, built with ML.NET, predicts 
-              the species of the animal with speed and accuracy. 
-              <br /><br />
-              
+              This project is my personal developer portfolio, designed to showcase my skills, 
+              projects, and professional background. Built with React and Next.js, 
+              it incorporates animations with Framer Motion, UI components, and responsive 
+              design principles to create a smooth, visually engaging experience. Additionally, 
+              it leverages CSS for styling and Swiper.js for project slides, providing a 
+              dynamic way to display my work. 
             </motion.p>
           </div>
 
-          {/* video section */}
+          {/* image section */}
           <motion.div
             variants={fadeIn("down", 0.6)}
             initial="hidden"
@@ -50,20 +50,19 @@ const VeilleTechno = () => {
             exit="hidden"
             className="w-full xl:max-w-[55%] mt-12"
           >
-            <div className="w-full h-[250px] xl:h-[350px]">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/J0W-rCyOOgY"
-                title="Veille Techno TP2 Project Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            <div className="w-full h-auto">
+              <Image
+                src="/thumbnail mydeveloperportfolio.png" 
+                width={500}
+                height={300}
+                alt="Thumbnail for My Developer Portfolio"
+                className="rounded-lg shadow-lg"
+              />
             </div>
           </motion.div>
         </div>
 
-        {/* Boutons GitHub et Retour */}
+        {/* Buttons for GitHub and Return */}
         <motion.div
           variants={fadeIn("up", 0.5)}
           initial="hidden"
@@ -72,7 +71,7 @@ const VeilleTechno = () => {
           className="mt-14 text-center flex justify-center gap-4"
         >
           <a
-            href="https://github.com/PatrickDumoulin/VeilleTechnoTP2V2"
+            href="https://github.com/PatrickDumoulin/MyDevelopperPortfolio/commits/main/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-accent rounded-full hover:bg-accent-dark transition-colors duration-300"
@@ -91,4 +90,4 @@ const VeilleTechno = () => {
   );
 };
 
-export default VeilleTechno;
+export default MyDeveloperPortfolio;
