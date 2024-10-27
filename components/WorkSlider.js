@@ -27,7 +27,6 @@ const workSlides = {
     },
     {
       images: [
-        
         {
           title: "ASC",
           technology: "| Ml.Net + React",
@@ -51,10 +50,10 @@ const workSlides = {
   ],
 };
 
-// import swiper react components
+// import Swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// import swiper styles
+// import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
@@ -68,10 +67,14 @@ import { Pagination } from "swiper";
 
 // next image
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const WorkSlider = () => {
+  const router = useRouter();
+
   return (
     <Swiper
+      key={router.pathname} // Change key on route change to reload Swiper
       spaceBetween={10}
       pagination={{
         clickable: true,
@@ -86,7 +89,6 @@ const WorkSlider = () => {
               {slide.images.map((image, index) => {
                 return (
                   <div key={index}>
-                    {/* Vérifie si le projet est "ACEF DE QUÉBEC", "Space Game", "Bulky Book", "Modern Recruit", "ASC", ou "My Developer Portfolio" pour ajouter le lien approprié */}
                     {image.title === "ACEF de Québec" ? (
                       <Link
                         href="/work/acef"
