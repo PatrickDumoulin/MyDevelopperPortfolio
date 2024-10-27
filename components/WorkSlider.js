@@ -75,25 +75,19 @@ const WorkSlider = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      setIsVisible(false); // Cache le slider avant de changer de page
+    const handleRouteChangeStart = () => {
+      setIsVisible(false); // Cache le slider avant de changer de page et ne le réaffiche pas
     };
 
-    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on("routeChangeStart", handleRouteChangeStart);
 
     return () => {
-      router.events.off("routeChangeStart", handleRouteChange);
+      router.events.off("routeChangeStart", handleRouteChangeStart);
     };
   }, [router.events]);
 
-  useEffect(() => {
-    // Affiche le slider après une courte pause pour la transition
-    const timer = setTimeout(() => setIsVisible(true), 100);
-    return () => clearTimeout(timer);
-  }, [router.pathname]);
-
   return (
-    <div className={`transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+    <div className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
       <Swiper
         spaceBetween={10}
         pagination={{
