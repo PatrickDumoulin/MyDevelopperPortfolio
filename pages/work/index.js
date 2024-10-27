@@ -36,6 +36,8 @@ import {
 
 import { TbSql } from "react-icons/tb";
 
+import { AnimatePresence } from "framer-motion";
+
 export const serviceData = [];
 
 //components
@@ -49,6 +51,9 @@ import { fadeIn } from "../../variants";
 
 const Work = () => {
   return (
+    <AnimatePresence>
+
+    
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
       <div className="container mx-auto">
@@ -91,6 +96,7 @@ const Work = () => {
       </div>
       <Bulb />
     </div>
+    </AnimatePresence>
   );
 };
 
