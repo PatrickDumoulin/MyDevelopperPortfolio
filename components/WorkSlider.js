@@ -68,13 +68,25 @@ import { Pagination } from "swiper";
 // next image
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
 
 const WorkSlider = () => {
   const router = useRouter();
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      // Destroy the Swiper instance on unmount to force recreation on remount
+      if (swiperRef.current) {
+        swiperRef.current.destroy(true, true);
+        swiperRef.current = null;
+      }
+    };
+  }, [router.pathname]);
 
   return (
     <Swiper
-      key={router.pathname} // Change key on route change to reload Swiper
+      onSwiper={(swiper) => (swiperRef.current = swiper)}
       spaceBetween={10}
       pagination={{
         clickable: true,
