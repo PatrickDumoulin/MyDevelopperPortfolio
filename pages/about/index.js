@@ -174,7 +174,7 @@ const About = () => {
             exit="hidden"
             className="mb-7"
           >
-            <a href="/PatrickDumoulinCV.pdf" download className="btn btn-primary text-2xl">
+            <a href="/CVPatrickDumoulin2024_English.pdf" download className="btn btn-primary text-2xl">
               <span className="text-accent">&rarr;</span> Download My CV Here <span className="text-accent"> &larr; </span>
             </a>
           </motion.div>
