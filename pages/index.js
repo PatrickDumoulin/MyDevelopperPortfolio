@@ -31,7 +31,7 @@ const Home = () => {
         exit="hidden" 
         className='h1'>
           Fullstack <br />  {' '}
-          <span className='text-accent'>Developper.</span> 
+          <span className='text-accent'>Developer.</span> 
         </motion.h1>
         {/* subtitle */}
         <motion.p variants={fadeIn('down', 0.3)} 
