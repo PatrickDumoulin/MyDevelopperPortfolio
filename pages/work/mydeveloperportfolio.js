@@ -52,7 +52,7 @@ const MyDeveloperPortfolio = () => {
           >
             <div className="w-full h-auto">
               <Image
-                src="/thumbnail mydeveloperportfolio.png" 
+                src="/Thumbnail mydeveloperportfolio.png" 
                 width={500}
                 height={300}
                 alt="Thumbnail for My Developer Portfolio"

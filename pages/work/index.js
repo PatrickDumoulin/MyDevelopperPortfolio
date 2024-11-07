@@ -78,7 +78,7 @@ const Work = () => {
             >
               A collection of my recent projects, 
               featuring work with ASP.NET, 
-              Unity, Angular and React. More to come.
+              Unity, ML.Net and React. More to come.
             </motion.p>
           </div>
 
