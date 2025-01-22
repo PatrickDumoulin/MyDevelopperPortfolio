@@ -94,7 +94,7 @@ const About = () => {
           I&apos;m Patrick, a passionate developer based in Québec City with a deep love for creating 
           innovative applications and games. I have an AEC in application development and have 
           developed a complete .NET app for a client, ACEF de Québec, which has further fueled my 
-          interest in the latest frameworks and technologies, especially .NET.
+          interest in the latest frameworks and technologies.
 
           In addition, I&apos;m a musician and enjoy exploring creative avenues like producing music 
           professionally.
