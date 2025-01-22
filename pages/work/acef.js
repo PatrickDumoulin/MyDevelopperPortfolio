@@ -84,14 +84,14 @@ financial challenges.
         animate="show"
         exit="hidden"
         className="mt-14 text-center flex justify-center gap-4">
-          <a
+          {/* <a
             href="https://github.com/PatrickDumoulin/ACEF"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-accent rounded-full hover:bg-accent-dark transition-colors duration-300"
           >
             View GitHub Repository
-          </a>
+          </a> */}
           <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
