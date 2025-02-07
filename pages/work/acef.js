@@ -8,8 +8,25 @@ import { fadeIn } from '../../variants';
 // composants
 import Circles from '../../components/Circles';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const AcefProject = () => {
+  const router = useRouter();
+  const { locale } = router;
+
+  const content = {
+    en: {
+      description: "The ACEF de Québec is a non-profit that provides budget management, financial education, and consumer rights advocacy. The project uses ASP.NET and Entity Framework to create a web application that centralizes client, intervention, and workshop data, stored securely in a SQL database.\n\nThis solution offers a user-friendly interface for managing client records, generating reports, and improving operational efficiency, helping ACEF better support individuals and families with financial challenges.",
+      moreInfo: "More Info",
+      back: "Back"
+    },
+    fr: {
+      description: "L'ACEF de Québec est un organisme à but non lucratif qui offre des services de gestion budgétaire, d'éducation financière et de défense des droits des consommateurs. Le projet utilise ASP.NET et Entity Framework pour créer une application web qui centralise les données des clients, des interventions et des ateliers, stockées de manière sécurisée dans une base de données SQL.\n\nCette solution offre une interface conviviale pour la gestion des dossiers clients, la génération de rapports et l'amélioration de l'efficacité opérationnelle, aidant l'ACEF à mieux soutenir les individus et les familles face aux défis financiers.",
+      moreInfo: "Plus d'infos",
+      back: "Retour"
+    }
+  }[locale];
+
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
@@ -31,29 +48,21 @@ const AcefProject = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+              className="mb-4 max-w-[400px] mx-auto lg:mx-0 whitespace-pre-line"
             >
-              The ACEF de Québec is a non-profit that provides budget management, financial education, 
-              and consumer rights advocacy. 
-              
-              
-              The project uses ASP.NET and Entity FrameWork to create a web application that 
-              centralizes client, intervention, and workshop data, stored securely in a SQL database.
-              <br />
-              <br />
-
-This solution offers a user-friendly interface for managing client records, generating reports, 
-and improving operational efficiency, helping ACEF better support individuals and families with 
-financial challenges.
-
-
-        <div className='mt-4'>
-        <a href="/DAS-4ProjectAcefEglish.docx" download className="btn btn-primary text-2xl">
-              <span className="text-accent">&rarr;</span> More Info <span className="text-accent"> &larr; </span>
-            </a>
-        </div>
-          
+              {content.description}
             </motion.p>
+            <div className='mt-4'>
+              <a 
+                href={locale === 'fr' ? "/DAS-4ProjectAcefFrancais.docx" : "/DAS-4ProjectAcefEnglish.docx"}
+                download 
+                className="btn btn-primary text-2xl"
+              >
+                <span className="text-accent">&rarr;</span> 
+                {content.moreInfo} 
+                <span className="text-accent"> &larr; </span>
+              </a>
+            </div>
           </div>
 
           {/* video section */}
@@ -96,7 +105,7 @@ financial challenges.
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Back
+            {content.back}
           </Link>
         </motion.div>
       </div>

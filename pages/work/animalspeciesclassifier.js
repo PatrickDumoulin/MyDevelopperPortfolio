@@ -1,5 +1,6 @@
 // next/image
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // framer motion
 import { motion } from 'framer-motion';
@@ -9,7 +10,23 @@ import { fadeIn } from '../../variants';
 import Circles from '../../components/Circles';
 import Link from 'next/link';
 
-const VeilleTechno = () => {
+const ASCProject = () => {
+  const router = useRouter();
+  const { locale } = router;
+
+  const content = {
+    en: {
+      description: "The Animal Species Classifier (ASC) is an innovative project combining ML.NET for machine learning and React for the frontend interface. This application can identify different animal species from uploaded images with high accuracy.\n\nThe project demonstrates the integration of machine learning models with web applications, featuring real-time image processing and classification using a custom-trained ML.NET model.",
+      viewGithub: "View GitHub Repository",
+      back: "Back"
+    },
+    fr: {
+      description: "Le Classificateur d'Espèces Animales (ASC) est un projet innovant combinant ML.NET pour l'apprentissage automatique et React pour l'interface frontend. Cette application peut identifier différentes espèces animales à partir d'images téléchargées avec une grande précision.\n\nLe projet démontre l'intégration de modèles d'apprentissage automatique avec des applications web, offrant un traitement et une classification d'images en temps réel utilisant un modèle ML.NET personnalisé.",
+      viewGithub: "Voir le dépôt GitHub",
+      back: "Retour"
+    }
+  }[locale];
+
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
@@ -24,21 +41,16 @@ const VeilleTechno = () => {
               exit="hidden"
               className="h2 xl:mt-12"
             >
-            Animal Species Classifier<span className="text-accent">.</span>
+              ASC<span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+              className="mb-4 max-w-[400px] mx-auto lg:mx-0 whitespace-pre-line"
             >
-              This project utilizes ML.NET and ASP.NET for the backend and React for the 
-              frontend to create an image recognition app that classifies animal species. 
-              Users can upload images, and the machine learning model, built with ML.NET, predicts 
-              the species of the animal with speed and accuracy. 
-              <br /><br />
-              
+              {content.description}
             </motion.p>
           </div>
 
@@ -54,7 +66,7 @@ const VeilleTechno = () => {
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/J0W-rCyOOgY"
-                title="Veille Techno TP2 Project Video"
+                title="Animal Species Classifier Project Video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -72,18 +84,18 @@ const VeilleTechno = () => {
           className="mt-14 text-center flex justify-center gap-4"
         >
           <a
-            href="https://github.com/PatrickDumoulin/VeilleTechnoTP2V2"
+            href="https://github.com/PatrickDumoulin/AnimalSpeciesClassifier"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-accent rounded-full hover:bg-accent-dark transition-colors duration-300"
           >
-            View GitHub Repository
+            {content.viewGithub}
           </a>
           <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Back
+            {content.back}
           </Link>
         </motion.div>
       </div>
@@ -91,4 +103,4 @@ const VeilleTechno = () => {
   );
 };
 
-export default VeilleTechno;
+export default ASCProject;

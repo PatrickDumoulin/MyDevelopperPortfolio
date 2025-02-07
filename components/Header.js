@@ -5,6 +5,7 @@ import Link from "next/link";
 
 //components
 import Socials from '../components/Socials';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   return (
@@ -20,8 +21,10 @@ const Header = () => {
             </h1>
           </Link>
         </div>
-        {/* Socials */}
-        <Socials />
+        <div className="flex items-center gap-4">
+          <LanguageSelector />
+          <Socials />
+        </div>
       </div>
     </header>
   );

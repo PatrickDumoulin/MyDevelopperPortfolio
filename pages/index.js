@@ -1,5 +1,7 @@
 //next image
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { translations } from '../translations';
 
 //components
 import ParticlesContainer from '../components/ParticlesContainer';
@@ -13,6 +15,10 @@ import {motion} from 'framer-motion'
 import {fadeIn} from '../variants';
 
 const Home = () => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = translations[locale];
+
   return (
   <div className='bg-primary/60 h-full'>
     {/* text */}
@@ -30,8 +36,8 @@ const Home = () => {
         animate="show" 
         exit="hidden" 
         className='h1'>
-          Fullstack <br />  {' '}
-          <span className='text-accent'>Developer.</span> 
+          {t.home.title} <br /> {' '}
+          <span className='text-accent'>{t.home.subtitle}</span> 
         </motion.h1>
         {/* subtitle */}
         <motion.p variants={fadeIn('down', 0.3)} 
@@ -39,8 +45,7 @@ const Home = () => {
         animate="show" 
         exit="hidden" 
         className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 '>
-        Passionate about transforming complex ideas into efficient, user-friendly digital 
-        solutions.
+          {t.home.description}
         </motion.p>
         {/* btn */}
         <div className='flex justify-center xl:hidden relative'>

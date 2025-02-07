@@ -1,5 +1,6 @@
 // next/image
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // framer motion
 import { motion } from 'framer-motion';
@@ -9,7 +10,23 @@ import { fadeIn } from '../../variants';
 import Circles from '../../components/Circles';
 import Link from 'next/link';
 
-const ModernRecruit = () => {
+const ModernRecruitProject = () => {
+  const router = useRouter();
+  const { locale } = router;
+
+  const content = {
+    en: {
+      description: "Modern Recruit is a recruitment platform built with ASP.NET Core, designed to streamline the hiring process. The application features job posting management, candidate tracking, and automated application processing.\n\nThe platform includes an intuitive interface for both recruiters and job seekers, with features such as resume parsing, skill matching, and interview scheduling.",
+      viewGithub: "View GitHub Repository",
+      back: "Back"
+    },
+    fr: {
+      description: "Modern Recruit est une plateforme de recrutement construite avec ASP.NET Core, conçue pour simplifier le processus d'embauche. L'application comprend la gestion des offres d'emploi, le suivi des candidats et le traitement automatisé des candidatures.\n\nLa plateforme inclut une interface intuitive pour les recruteurs et les chercheurs d'emploi, avec des fonctionnalités telles que l'analyse de CV, la correspondance des compétences et la planification des entretiens.",
+      viewGithub: "Voir le dépôt GitHub",
+      back: "Retour"
+    }
+  }[locale];
+
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
@@ -31,22 +48,13 @@ const ModernRecruit = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+              className="mb-4 max-w-[400px] mx-auto lg:mx-0 whitespace-pre-line"
             >
-              ModernRecruit is an ASP.NET-based job recruitment platform that enables users to 
-              browse job listings, mark favorites, and apply for positions seamlessly. 
-              Built with a microservices architecture (APIs), the app provides scalable and modular 
-              components to manage different features, such as job postings, user profiles, and 
-              application tracking. 
-              <br />
-              <br />
-              The architecture ensures that each service (like job listings, 
-              user authentication, and favorite management) operates independently, allowing for 
-              better maintainability and flexibility.
+              {content.description}
             </motion.p>
           </div>
 
-          {/* video section */}
+          {/* Image section */}
           <motion.div
             variants={fadeIn("down", 0.6)}
             initial="hidden"
@@ -57,7 +65,7 @@ const ModernRecruit = () => {
             <div className="w-full h-[250px] xl:h-[350px]">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/8pRRcjN07Vg"
+                src="https://www.youtube.com/embed/4RZuedj6grU"
                 title="Modern Recruit Project Video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -81,13 +89,13 @@ const ModernRecruit = () => {
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-accent rounded-full hover:bg-accent-dark transition-colors duration-300"
           >
-            View GitHub Repository
+            {content.viewGithub}
           </a>
           <Link
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Back
+            {content.back}
           </Link>
         </motion.div>
       </div>
@@ -95,4 +103,4 @@ const ModernRecruit = () => {
   );
 };
 
-export default ModernRecruit;
+export default ModernRecruitProject;

@@ -8,8 +8,25 @@ import { fadeIn } from '../../variants';
 // composants
 import Circles from '../../components/Circles';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const SpaceGameProject = () => {
+  const router = useRouter();
+  const { locale } = router;
+
+  const content = {
+    en: {
+      description: "Space Game is a 3D game developed with Unity where players control a rocket in an immersive space environment. The game features three levels with increasing difficulty, including unique challenges such as avoiding obstacles and landing on platforms.\n\nThe sound design and music, created by myself, add a captivating dimension to the gameplay experience, enhancing the space atmosphere.",
+      moreInfo: "More Info",
+      back: "Back"
+    },
+    fr: {
+      description: "Space Game est un jeu 3D développé avec Unity où les joueurs contrôlent une fusée dans un environnement spatial immersif. Le jeu propose trois niveaux de difficulté croissante, incluant des défis uniques comme l'évitement d'obstacles et l'atterrissage sur des plateformes.\n\nLe design sonore et la musique, créés par mes soins, ajoutent une dimension captivante à l'expérience de jeu, renforçant l'atmosphère spatiale.",
+      moreInfo: "Plus d'infos",
+      back: "Retour"
+    }
+  }[locale];
+
   return (
     <div className="h-full bg-primary/30 py-36 flex items-center">
       <Circles />
@@ -31,15 +48,9 @@ const SpaceGameProject = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+              className="mb-4 max-w-[400px] mx-auto lg:mx-0 whitespace-pre-line"
             >
-              Space Game is a 3D game developed with Unity where players control a rocket in an immersive space environment. 
-              The game features three levels with increasing difficulty, including unique challenges such as avoiding obstacles 
-              and landing on platforms. 
-              <br />
-              <br />
-              The sound design and music, created by myself, add a captivating dimension to the gameplay experience, enhancing 
-              the space atmosphere.
+              {content.description}
             </motion.p>
           </div>
 
@@ -83,7 +94,7 @@ const SpaceGameProject = () => {
             href="/work"
             className="inline-block px-6 py-3 text-lg font-medium text-white bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
           >
-            Back
+            {content.back}
           </Link>
         </motion.div>
       </div>

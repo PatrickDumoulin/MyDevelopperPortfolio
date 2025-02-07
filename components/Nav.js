@@ -9,22 +9,34 @@ import {
 } from 'react-icons/hi2';
 
 // nav data
-export const navData = [
-  { name: 'home', path: '/', icon: <HiHome /> },
-  { name: 'about', path: '/about', icon: <HiUser /> },
-  // { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
-  { name: 'work', path: '/work', icon: <HiViewColumns /> },
-  // {
-  //   name: 'testimonials',
-  //   path: '/testimonials',
-  //   icon: <HiChatBubbleBottomCenterText />,
-  // },
-  {
-    name: 'contact',
-    path: '/contact',
-    icon: <HiEnvelope />,
-  },
-];
+const navData = {
+  en: [
+    { name: 'home', path: '/', icon: <HiHome /> },
+    { name: 'about', path: '/about', icon: <HiUser /> },
+    // { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
+    { name: 'work', path: '/work', icon: <HiViewColumns /> },
+    // {
+    //   name: 'testimonials',
+    //   path: '/testimonials',
+    //   icon: <HiChatBubbleBottomCenterText />,
+    // },
+    {
+      name: 'contact',
+      path: '/contact',
+      icon: <HiEnvelope />,
+    },
+  ],
+  fr: [
+    { name: 'accueil', path: '/', icon: <HiHome /> },
+    { name: 'à propos', path: '/about', icon: <HiUser /> },
+    { name: 'projets', path: '/work', icon: <HiViewColumns /> },
+    {
+      name: 'contact',
+      path: '/contact',
+      icon: <HiEnvelope />,
+    },
+  ]
+};
 
 //next link
 import Link from 'next/link';
@@ -34,6 +46,8 @@ import { useRouter} from 'next/router';
 
 const Nav = () => {
   const router = useRouter();
+  const { locale } = router;
+  const navigation = navData[locale];
   const pathname = router.pathname
   return (
   <nav className='flex flex-col items-center xl:justify-center 
@@ -44,7 +58,7 @@ const Nav = () => {
       justify-between xl:justify-center gap-y-10 px-4 
       md:px-40 xl:px-0 h-[80] xl:h-max py-8 bg-white/10 
       backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'>
-      {navData.map((link, index)=>{
+      {navigation.map((link, index)=>{
         return( 
         <Link 
           className={`${
