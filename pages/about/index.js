@@ -326,7 +326,7 @@ const About = () => {
             className="mb-7"
           >
             <a 
-              href={locale === 'fr' ? "/CVPatrickDumoulin2024_Francais.pdf" : "/CVPatrickDumoulin2024_English.pdf"} 
+              href={locale === 'fr' ? "/CV Patrick Dumoulin Francais 2025.pdf" : "/CV Patrick Dumoulin English 2024.pdf"} 
               download 
               className="btn btn-primary text-2xl"
             >
