@@ -50,9 +50,10 @@ const aboutData = {
         {
           title: "AI",
           skills: [
-            "MLNet",
-            "GPT-4, Claude 3.5 Sonnet",
+            "ML.Net",
+            "GPT-4o, Claude 3.5 Sonnet",
             "Cursor",
+            "MidJourney"
           ]
         },
         {
@@ -102,7 +103,7 @@ const aboutData = {
       info: [
         {
           title: "AEC Secure Application Development",
-          stage: "Cégep Limoilou 2022-2024. An intense and fast-paced 2-year full-time program designed to perfect our programming skills. Not suitable for beginners."
+          stage: "Cégep Limoilou 2022-2024. Equivalent to a DEC in Computer Science. An intense and fast-paced 2-year full-time program designed to perfect our programming skills."
         },
       ],
     },
@@ -186,7 +187,7 @@ const aboutData = {
       info: [
         {
           title: "AEC Développement d'Applications Sécurisées",
-          stage: "Cégep Limoilou 2022-2024. Un programme intensif de 2 ans à temps plein conçu pour perfectionner nos compétences en programmation. Non adapté aux débutants."
+          stage: "Cégep Limoilou 2022-2024. Équivalent au DEC en Informatique. Un programme intensif de 2 ans à temps plein conçu pour perfectionner nos compétences en programmation."
         },
       ],
     },
