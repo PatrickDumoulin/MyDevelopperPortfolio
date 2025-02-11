@@ -28,7 +28,7 @@ const SpaceGameProject = () => {
   }[locale];
 
   return (
-    <div className="h-full bg-primary/30 py-36 flex items-center">
+    <div className="h-full bg-gradient-to-b from-[#0B1221] to-[#142237] py-36 flex items-center">
       <Circles />
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-x-8 items-start">

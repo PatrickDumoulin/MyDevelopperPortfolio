@@ -113,7 +113,10 @@ const WorkSlider = () => {
                   return (
                     <div key={index}>
                       {links[image.title] ? (
-                        <Link href={links[image.title]} className="relative rounded-lg overflow-hidden flex items-center justify-center group">
+                        <Link 
+                          href={links[image.title]} 
+                          className="relative rounded-lg overflow-hidden flex items-center justify-center group hover:border-[#142237]"
+                        >
                           <div className="flex items-center justify-center relative overflow-hidden group">
                             <Image
                               src={image.path}
@@ -121,7 +124,7 @@ const WorkSlider = () => {
                               height={300}
                               alt={image.title}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#142237] to-[#0B1221] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
                             <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
                               <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
                                 <div className="delay-100">{image.title}</div>
@@ -144,7 +147,7 @@ const WorkSlider = () => {
                               height={300}
                               alt={image.title}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#142237] to-[#0B1221] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
                             <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
                               <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
                                 <div className="delay-100">{image.title}</div>
