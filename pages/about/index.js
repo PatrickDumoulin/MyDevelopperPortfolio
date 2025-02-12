@@ -43,7 +43,7 @@ const aboutData = {
             "HTML5, CSS3, SASS",
             "Tailwind CSS, Bootstrap",
             "Angular, Vue.js",
-            "Wordpress"
+            "Wordpress, Elementor"
           ]
         },
 
@@ -128,8 +128,10 @@ const aboutData = {
             "React, Next.js",
             "TypeScript, JavaScript",
             "HTML5, CSS3, SASS",
+            "Wordpress, Elementor",
             "Tailwind CSS, Bootstrap",
-            "Angular, Vue.js"
+            "Angular, Vue.js",
+            
           ]
         },
         {
