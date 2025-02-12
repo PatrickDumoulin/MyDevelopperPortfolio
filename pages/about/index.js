@@ -41,7 +41,7 @@ const aboutData = {
             "React, Next.js",
             "TypeScript, JavaScript",
             "HTML5, CSS3, SASS",
-            "Tailwind CSS, Bootstrap",
+            "Tailwind CSS, Bootstrap, Native-Wind",
             "Angular, Vue.js",
             "WordPress, Elementor"
           ]
@@ -129,7 +129,7 @@ const aboutData = {
             "TypeScript, JavaScript",
             "HTML5, CSS3, SASS",
             "WordPress, Elementor",
-            "Tailwind CSS, Bootstrap",
+            "Tailwind CSS, Bootstrap, Native-Wind",
             "Angular, Vue.js",
             
           ]
