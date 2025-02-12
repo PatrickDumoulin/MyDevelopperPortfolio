@@ -64,7 +64,7 @@ const aboutData = {
             "YAML",
             "Docker",
             "Git, GitHub",
-            "Vercel, Firebase Hosting",
+            "Vercel, Firebase, Appwrite",
             "Agile, Jira"
           ]
         },
@@ -150,7 +150,7 @@ const aboutData = {
             "YAML",
             "Docker",
             "Git, GitHub",
-            "Vercel, Firebase Hosting",
+            "Vercel, Firebase, Appwrite",
             "Agile, Jira"
           ]
         },
