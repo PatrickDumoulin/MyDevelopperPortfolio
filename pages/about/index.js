@@ -219,7 +219,7 @@ const About = () => {
   }[locale];
 
   return (
-    <div className="h-full bg-gradient-to-b from-[#0B1221] to-[#142237] py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-gradient-to-b from-[#0B1221] to-[#142237] py-32 text-center xl:text-left">
       <Circles />
       <motion.div
         variants={fadeIn("right", 0.2)}
