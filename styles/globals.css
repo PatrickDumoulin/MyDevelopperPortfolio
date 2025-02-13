@@ -20,7 +20,7 @@
 
 @layer base {
   body {
-    @apply bg-secondary leading-relaxed md:overflow-hidden overflow-x-hidden;
+    @apply bg-secondary leading-relaxed overflow-hidden;
   }
   .page {
     @apply w-full h-screen;
