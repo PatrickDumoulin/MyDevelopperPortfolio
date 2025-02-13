@@ -126,7 +126,7 @@ const WorkSlider = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#142237] to-[#0B1221] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
                             <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                              <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="flex flex-col items-center sm:flex-row sm:items-start gap-x-2 text-[13px] tracking-[0.2em]">
                                 <div className="delay-100">{image.title}</div>
                                 <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
                                   {image.technology}
@@ -149,7 +149,7 @@ const WorkSlider = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#142237] to-[#0B1221] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
                             <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                              <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                              <div className="flex flex-col items-center sm:flex-row sm:items-start gap-x-2 text-[13px] tracking-[0.2em]">
                                 <div className="delay-100">{image.title}</div>
                                 <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
                                   {image.technology}

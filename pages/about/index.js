@@ -219,7 +219,7 @@ const About = () => {
   }[locale];
 
   return (
-    <div className="h-full bg-gradient-to-b from-[#0B1221] to-[#142237] py-32 text-center xl:text-left overflow-y-auto">
+    <div className="h-auto md:h-full bg-gradient-to-b from-[#0B1221] to-[#142237] py-32 text-center xl:text-left overflow-y-auto overflow-x-hidden">
       <Circles />
       <motion.div
         variants={fadeIn("right", 0.2)}
@@ -231,18 +231,18 @@ const About = () => {
         <Avatar />
       </motion.div>
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
-        <div className="flex-1 flex flex-col justify-center">
-          <div className="mb-4 mt-12">
+        <div className="flex-1 flex flex-col justify-center xl:items-start">
+          <div className="flex justify-center xl:justify-start mb-4 mt-12">
             <Image
-              src="/Maphoto.jpg" // Remplace ce chemin par celui de ta photo
+              src="/Maphoto.jpg"
               alt="Photo de Patrick Dumoulin"
-              width={170} // Ajuste la taille en pixels
-              height={100} // Ajuste la taille en pixels
-              className="rounded-full " // Classe pour arrondir et centrer l'image
+              width={140}
+              height={140}
+              className="rounded-full"
             />
           </div>
           <motion.h2
-            className="h2"
+            className="h2 text-[26px] md:text-[40px]"
             variants={fadeIn("right", 0.6)}
             initial="hidden"
             animate="show"
@@ -268,50 +268,42 @@ const About = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden md:flex md:max-w-xl xl:max--w-none mx-auto xl:mx-0 mb-8"
+            className="flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
           >
-            <motion.div 
-            variants={fadeIn("right", 0.6)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="hidden md:flex md:max-w-xl xl:max--w-none mx-auto xl:mx-0 mb-8"
-            >
-              <div className="flex flex-1 xl:gap-x-6">
-                <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={10} duration={5}/> 
-                  </div>
-                  <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                    {stats.languages}
-                  </div>
+            <div className="flex flex-1 xl:gap-x-6">
+              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                  <CountUp start={0} end={10} duration={5} /> +
                 </div>
-                <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={524} duration={5}/> 
-                  </div>
-                  <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                    {stats.commits}
-                  </div>
-                </div>
-                <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={16} duration={5}/> +
-                  </div>
-                  <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                    {stats.projects}
-                  </div>
-                </div>
-                <div className="relative flex-1">
-                  <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={1} duration={5}/>
-                  </div>
-                  <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                    {stats.clients}
-                  </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  {stats.languages}
                 </div>
               </div>
-            </motion.div>
+              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                  <CountUp start={0} end={524} duration={5}/> 
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  {stats.commits}
+                </div>
+              </div>
+              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                  <CountUp start={0} end={16} duration={5}/> +
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  {stats.projects}
+                </div>
+              </div>
+              <div className="relative flex-1">
+                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+                  <CountUp start={0} end={1} duration={5}/>
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  {stats.clients}
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
         <motion.div

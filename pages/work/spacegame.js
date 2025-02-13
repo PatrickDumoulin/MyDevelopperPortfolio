@@ -28,12 +28,11 @@ const SpaceGameProject = () => {
   }[locale];
 
   return (
-    <div className="h-full bg-gradient-to-b from-[#0B1221] to-[#142237] py-36 flex items-center">
+    <div className="h-auto md:h-full bg-gradient-to-b from-[#0B1221] to-[#142237] py-32 overflow-y-auto overflow-x-hidden">
       <Circles />
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-x-8 items-start">
-          {/* text section */}
-          <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
+        <div className="flex flex-col xl:flex-row gap-x-8">
+          <div className="text-center xl:text-left flex xl:w-[30vw] flex-col mb-4 xl:mb-0">
             <motion.h2
               variants={fadeIn("up", 0.3)}
               initial="hidden"
@@ -48,7 +47,7 @@ const SpaceGameProject = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0 whitespace-pre-line"
+              className="mb-4 max-w-[400px] mx-auto xl:mx-0 px-4 xl:px-0 whitespace-pre-line"
             >
               {content.description}
             </motion.p>
